@@ -1,0 +1,136 @@
+/* TrustID Custom Styling & Design System */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Brand Palette from Reference Screenshot */
+  --primary-green: #167a4e;
+  --primary-green-hover: #136943;
+  --primary-green-light: #ecfdf5;
+  --primary-green-border: #d1fae5;
+  --accent-emerald: #10b981;
+  --accent-bright: #22c55e;
+  --mint-bg: #e8f5ed;
+  
+  /* Backgrounds & Surfaces */
+  --canvas-dark: #0f141c;
+  --canvas-surface: #ffffff;
+  --canvas-subtle: #f8fafc;
+  --border-subtle: #e2e8f0;
+  --border-card: #eef2f6;
+  
+  /* Typography */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--canvas-dark);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background Dotted Matrix Pattern matching the screenshot */
+.matrix-canvas-bg {
+  background-color: #0f141c;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.25px, transparent 1.25px);
+  background-size: 22px 22px;
+  background-position: center;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glassmorphism & Elevation */
+.app-container-shadow {
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.card-hover-effect {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08);
+}
+
+/* Interactive Badge & Pill styles */
+.badge-mint {
+  background-color: #ecfdf5;
+  color: #167a4e;
+  border: 1px solid #d1fae5;
+}
+
+.badge-mint-dark {
+  background-color: #167a4e;
+  color: #ffffff;
+}
+
+.badge-amber {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.badge-rose {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+/* Smooth Pulse Animation for Live Indicators */
+@keyframes status-pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.pulse-active {
+  animation: status-pulse 2.2s infinite ease-in-out;
+}
+
+/* Code & DID font styling */
+.font-mono-did {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
+
+/* Modal Animations */
+.modal-backdrop-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-pop-in {
+  animation: modalPop 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
